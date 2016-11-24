@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>Document</title>
+</head>
+<body>
+	<div class="wcfKalendar"></div>
+</body>
+<script src="jquery-2.1.0.js" type="text/javascript" charset="utf-8"></script>
+<script src="wcfKalendar.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+	var date=new WcfKalendar();
+	var monthDays=date.cal_month_days();//cal_month_days为获取某月的天数，可以传入参数(时间戳，毫秒为单位)，不传为当月
+	var weekFirstday=date.cal_week_firstDay();//cal_week_firstDay获取某月一号的星期数，可以传入参数(时间戳，毫秒为单位)，不传为当月
+	var weekDay=date.cal_week_day();//cal_week_day获取某天的星期数，可以传入参数(时间戳，毫秒为单位)，不传为当天
+	var selectDate=date.getDate();//getDate方法是获取选择框中的日期，即选中日期
+	date.clickCall(function(){//改方法为选中日期后的响应事件
+		alert("你选择的是:"+selectDate);
+	})
+</script>
+</html>
